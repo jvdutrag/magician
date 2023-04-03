@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 
 import '@fontsource/roboto/300.css'
+import './index.css'
 
 import App from './App'
 
