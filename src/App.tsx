@@ -125,17 +125,17 @@ function App() {
   }, [name])
 
   React.useEffect(() => {
-    const savedFontSize = localStorage.getItem('fontSize') || fontSizes.min
+    const savedFontSize = localStorage.getItem('fontSize')
     if (savedFontSize) {
       setFontSize(Number(savedFontSize))
     }
 
-    const savedColor = localStorage.getItem('color') || '#000000'
+    const savedColor = localStorage.getItem('color')
     if (savedColor) {
       setColor(savedColor)
     }
 
-    const savedName = localStorage.getItem('name') || ''
+    const savedName = localStorage.getItem('name')
     if (savedName) {
       setName(savedName)
     }
