@@ -67,7 +67,7 @@ const lineStyles: Line[] = [
   },
   {
     name: 'phone',
-    method: (line: string, name: string) => line.includes('(telefone)'),
+    method: (line: string, name: string) => line.includes('diz (celular):'),
     style: {
       color: '#e7e700'
     }

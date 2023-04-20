@@ -112,6 +112,35 @@ function App() {
     link.click()
   }
 
+  React.useEffect(() => {
+    localStorage.setItem('fontSize', String(fontSize));
+  }, [fontSize])
+
+  React.useEffect(() => {
+    localStorage.setItem('color', color);
+  }, [color])
+
+  React.useEffect(() => {
+    localStorage.setItem('color', name);
+  }, [name])
+
+  React.useEffect(() => {
+    const savedFontSize = localStorage.getItem('fontSize')
+    if (savedFontSize) {
+      setFontSize(Number(savedFontSize))
+    }
+
+    const savedColor = localStorage.getItem('color')
+    if (savedColor) {
+      setColor(savedColor)
+    }
+
+    const savedName = localStorage.getItem('name')
+    if (savedName) {
+      setName(savedName)
+    }
+  }, [])
+
   return (
     <Container maxWidth="md" sx={{ mb: 2 }}>
       <Grid container spacing={2} sx={{ mb: 2 }}>
