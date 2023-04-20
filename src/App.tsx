@@ -113,30 +113,30 @@ function App() {
   }
 
   React.useEffect(() => {
-    localStorage.setItem('fontSize', String(fontSize || fontSizes.min));
+    localStorage.setItem('fontSize', String(fontSize));
   }, [fontSize])
 
   React.useEffect(() => {
-    localStorage.setItem('color', String(color || '#000000'));
+    localStorage.setItem('color', String(color));
   }, [color])
 
   React.useEffect(() => {
-    localStorage.setItem('name', String(name || ''));
+    localStorage.setItem('name', String(name));
   }, [name])
 
   React.useEffect(() => {
     const savedFontSize = localStorage.getItem('fontSize')
-    if (savedFontSize) {
+    if (savedFontSize?.length) {
       setFontSize(Number(savedFontSize))
     }
 
     const savedColor = localStorage.getItem('color')
-    if (savedColor) {
+    if (savedColor?.length) {
       setColor(savedColor)
     }
 
     const savedName = localStorage.getItem('name')
-    if (savedName) {
+    if (savedName?.length) {
       setName(savedName)
     }
   }, [])
