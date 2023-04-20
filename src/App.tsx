@@ -113,29 +113,29 @@ function App() {
   }
 
   React.useEffect(() => {
-    localStorage.setItem('fontSize', String(fontSize));
+    localStorage.setItem('fontSize', JSON.stringify(fontSize));
   }, [fontSize])
 
   React.useEffect(() => {
-    localStorage.setItem('color', color);
+    localStorage.setItem('color', JSON.stringify(color));
   }, [color])
 
   React.useEffect(() => {
-    localStorage.setItem('color', name);
+    localStorage.setItem('color', JSON.stringify(name));
   }, [name])
 
   React.useEffect(() => {
-    const savedFontSize = localStorage.getItem('fontSize')
+    const savedFontSize = JSON.parse(localStorage.getItem('fontSize') || 'null')
     if (savedFontSize) {
       setFontSize(Number(savedFontSize))
     }
 
-    const savedColor = localStorage.getItem('color')
+    const savedColor = JSON.parse(localStorage.getItem('color') || 'null')
     if (savedColor) {
       setColor(savedColor)
     }
 
-    const savedName = localStorage.getItem('name')
+    const savedName = JSON.parse(localStorage.getItem('name') || 'null')
     if (savedName) {
       setName(savedName)
     }
