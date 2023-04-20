@@ -125,12 +125,12 @@ function App() {
   }, [name])
 
   React.useEffect(() => {
-    const savedFontSize = JSON.parse(localStorage.getItem('fontSize') || 'null')
+    const savedFontSize = JSON.parse(localStorage.getItem('fontSize') || fontSizes.min)
     if (savedFontSize) {
       setFontSize(Number(savedFontSize))
     }
 
-    const savedColor = JSON.parse(localStorage.getItem('color') || 'null')
+    const savedColor = JSON.parse(localStorage.getItem('color') || '#000000')
     if (savedColor) {
       setColor(savedColor)
     }
