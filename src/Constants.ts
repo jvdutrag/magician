@@ -24,13 +24,6 @@ const lineStyles: Line[] = [
     }
   },
   {
-    name: 'money',
-    method: (line: string, name: string) => line.includes('pagou') || line.includes('recebeu') || line.includes('transferiu') || line.includes('sacou') || line.includes('depositou'),
-    style: {
-      color: '#008000'
-    }
-  },
-  {
     name: 'whisper',
     method: (line: string, name: string) => line.includes('sussurra') && !line.includes('(Carro)'),
     style: {
